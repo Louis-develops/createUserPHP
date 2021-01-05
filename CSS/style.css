@@ -1,0 +1,14 @@
+.warning{
+    color: red;
+}
+
+.flex-container{
+    display: flex;
+
+    list-style: none;
+}
+
+.flex-container > *{
+    display: block;
+    margin-right: 10px;
+}

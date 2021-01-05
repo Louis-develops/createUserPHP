@@ -1,14 +1,10 @@
-<?php;
+<?php
 
-function connection(){
-    if(isset($_POST["submit"])){
-        return mysqli_connect("localhost", "root", "", "mysqlcreate");
+    $connection = mysqli_connect("localhost", "root", "", "mysqlcreate");
 
+    if(!$connection){
+        die("Connection to database unsuccessful. Please Try again later");
     }
-}
-
-
-
 
 ?>
 
