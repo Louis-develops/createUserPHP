@@ -12,6 +12,14 @@
             $email = $_POST["email"];
             $password = $_POST["password"];
 
+            // Clean data to prevent sql injection
+            $username = mysqli_real_escape_string($connection, $username);
+            $first_name = mysqli_real_escape_string($connection, $first_name);
+            $surname = mysqli_real_escape_string($connection, $surname);
+            $email = mysqli_real_escape_string($connection, $email);
+            $password = mysqli_real_escape_string($connection, $password);
+            
+
             // Check that all variables have been assigned
             if($username && $first_name && $surname && $email && $password){
                 // Create query
@@ -83,6 +91,14 @@
             $email = $_POST["email-update"];
             $password = $_POST["password-update"];
 
+            // Clean data to prevent sql injection
+            $username = mysqli_real_escape_string($connection, $username);
+            $first_name = mysqli_real_escape_string($connection, $first_name);
+            $surname = mysqli_real_escape_string($connection, $surname);
+            $email = mysqli_real_escape_string($connection, $email);
+            $password = mysqli_real_escape_string($connection, $password);
+
+            
             // Create query
             $query = "UPDATE users SET ";
             $query .= "username = '$username', ";
