@@ -19,6 +19,22 @@
             $email = mysqli_real_escape_string($connection, $email);
             $password = mysqli_real_escape_string($connection, $password);
             
+            // Encrypt password
+            // Hash type
+            $hash = "$2y$10$";
+
+            // Create a salt for added encryption complexity
+            $salt = "imakesomecrazystrings2";
+
+            // Combine hash and salt
+            $hash_and_salt = $hash . $salt;
+
+            // Encrypt password
+            $password = crypt($password, $hash_and_salt);
+
+            echo $password;
+
+
 
             // Check that all variables have been assigned
             if($username && $first_name && $surname && $email && $password){
@@ -98,6 +114,20 @@
             $email = mysqli_real_escape_string($connection, $email);
             $password = mysqli_real_escape_string($connection, $password);
 
+            // Encrypt password
+            // Hash type
+            $hash = "$2y$10$";
+
+            // Create a salt for added encryption complexity
+            $salt = "imakesomecrazystrings2";
+
+            // Combine hash and salt
+            $hash_and_salt = $hash . $salt;
+
+            // Encrypt password
+            $password = crypt($password, $hash_and_salt);
+
+            echo $password;
             
             // Create query
             $query = "UPDATE users SET ";
